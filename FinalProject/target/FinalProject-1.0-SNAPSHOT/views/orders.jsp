@@ -54,8 +54,20 @@
                 </tbody>
             </table>
             <div class="con-but" style="margin-top: 30px;">
-                <input onclick="" value="Add Order" class="btn btn-success"/>
+                <input onclick="loadAddOrderForm()" value="Add Order" class="btn btn-success"/>
             </div>
         </c:if>
+        
+        <script>
+            function loadAddOrderForm() {
+                $.ajax({
+                    type: "GET",
+                    url: "${pageContext.request.contextPath}/addOrderForm",
+                    success: function (a) {
+                        $("#con").html(a);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
