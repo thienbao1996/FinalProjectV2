@@ -35,12 +35,6 @@ public class Orders implements Serializable{
     @Column(name = "createdate")
     private Date createdate;
     
-    @Column(name = "quantity")
-    private int quantity;
-    
-    @Column(name = "unit")
-    private int unit;
-    
     @Column(name = "discount")
     private float discount;
     
@@ -48,29 +42,12 @@ public class Orders implements Serializable{
     private float tax;
     
     @Column(name = "total")
-    private float total;
+    private float total;    
     
-//    public List<Products> listProducts;
-//
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-//    public List<Products> getListProducts() {
-//        return listProducts;
-//    }
-//
-//    public void setListProducts(List<Products> listProducts) {
-//        this.listProducts = listProducts;
-//    }
+    @OneToMany(mappedBy = "orders")
+    private List<OrderDetail> orderDetails;
 
     public Orders() {
-    }
-
-    public Orders(Date createdate, int quantity, int unit, float discount, float tax, float total) {
-        this.createdate = createdate;
-        this.quantity = quantity;
-        this.unit = unit;
-        this.discount = discount;
-        this.tax = tax;
-        this.total = total;
     }
 
     public Integer getId() {
@@ -88,21 +65,13 @@ public class Orders implements Serializable{
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
     }
-
-    public int getQuantity() {
-        return quantity;
+    
+        public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getUnit() {
-        return unit;
-    }
-
-    public void setUnit(int unit) {
-        this.unit = unit;
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     public float getDiscount() {
@@ -113,14 +82,6 @@ public class Orders implements Serializable{
         this.discount = discount;
     }
 
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
-    }
-
     public float getTax() {
         return tax;
     }
@@ -128,6 +89,12 @@ public class Orders implements Serializable{
     public void setTax(float tax) {
         this.tax = tax;
     }
-    
-    
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
 }

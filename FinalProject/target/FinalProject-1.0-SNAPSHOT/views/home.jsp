@@ -13,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -35,13 +35,7 @@
                 <div class="col-lg-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li>
-                            <a onclick="">Quản Lý Đội Bóng</a>
-                        </li>
-                        <li>
-                            <a onclick="">Quản Lý Lịch Thi Đấu</a>
-                        </li>
-                        <li>
-                            <a onclick="">Xem Thông Tin Bảng Xếp Hạng</a>
+                            <a onclick="showListOrder()">List Order</a>
                         </li>
                     </ul>
                 </div>
@@ -52,5 +46,26 @@
                 </div>
             </div>
         </div>
+        <script>
+            function test() {
+                $.ajax({
+                    type: "GET",
+                    url: "${pageContext.request.contextPath}/test",
+                    success: function (a) {
+                        $("#con").html(a);
+                    }
+                });
+            }
+            
+            function showListOrder() {
+                $.ajax({
+                    type: "GET",
+                    url: "${pageContext.request.contextPath}/listOrder",
+                    success: function (a) {
+                        $("#con").html(a);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

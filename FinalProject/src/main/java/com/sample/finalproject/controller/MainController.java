@@ -5,8 +5,13 @@
  */
 package com.sample.finalproject.controller;
 
+import com.sample.finalproject.entity.Orders;
+import com.sample.finalproject.repository.OrdersRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
@@ -14,8 +19,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class MainController {
+    @Autowired
+    private OrdersRepository ordersRepository;
+    
     @RequestMapping("/")
     public String test() {
         return "home";
+    }
+    
+    @RequestMapping("test")
+    public String test2() {
+        return "test";
+    }
+    
+    @RequestMapping("listOrder")
+    public ModelAndView listOrder() {
+        ModelAndView m = new ModelAndView("orders");
+        List<Orders> list = ordersRepository.findAll();
+        m.addObject("listOrder", list);
+        return m;
     }
 }
