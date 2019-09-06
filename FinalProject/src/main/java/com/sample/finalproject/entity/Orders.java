@@ -50,16 +50,16 @@ public class Orders implements Serializable{
     @Column(name = "total")
     private float total;
     
-    public List<Products> listProducts;
-
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    public List<Products> getListProducts() {
-        return listProducts;
-    }
-
-    public void setListProducts(List<Products> listProducts) {
-        this.listProducts = listProducts;
-    }
+//    public List<Products> listProducts;
+//
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+//    public List<Products> getListProducts() {
+//        return listProducts;
+//    }
+//
+//    public void setListProducts(List<Products> listProducts) {
+//        this.listProducts = listProducts;
+//    }
 
     public Orders() {
     }
