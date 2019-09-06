@@ -8,9 +8,13 @@ package com.sample.finalproject.controller;
 import com.sample.finalproject.entity.OrderDetail;
 import com.sample.finalproject.entity.Orders;
 import com.sample.finalproject.entity.Products;
+import com.sample.finalproject.entity.ReturnBill;
+import com.sample.finalproject.entity.ReturnBillDetail;
 import com.sample.finalproject.repository.OrderDetailRepository;
 import com.sample.finalproject.repository.OrdersRepository;
 import com.sample.finalproject.repository.ProductsRepository;
+import com.sample.finalproject.repository.ReturnBillDetailRepository;
+import com.sample.finalproject.repository.ReturnBillRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +36,7 @@ public class MainController {
     private OrderDetailRepository orderDetailRepository;
     @Autowired
     private ProductsRepository productsRepository;
+    
     
     @RequestMapping("/")
     public String test() {
@@ -92,4 +97,6 @@ public class MainController {
         
         return m;
     }
+    
+    
 }

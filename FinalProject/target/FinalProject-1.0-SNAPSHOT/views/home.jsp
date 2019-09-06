@@ -37,6 +37,9 @@
                         <li>
                             <a onclick="showListOrder()">List Order</a>
                         </li>
+                        <li>
+                            <a onclick="showListReturnBill()">List Return Bill</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-10">
@@ -61,6 +64,16 @@
                 $.ajax({
                     type: "GET",
                     url: "${pageContext.request.contextPath}/listOrder",
+                    success: function (a) {
+                        $("#con").html(a);
+                    }
+                });
+            }
+            
+            function showListReturnBill() {
+                $.ajax({
+                    type: "GET",
+                    url: "${pageContext.request.contextPath}/listReturnBill",
                     success: function (a) {
                         $("#con").html(a);
                     }

@@ -42,6 +42,13 @@ public class ReturnBillDetail {
     public ReturnBillDetail() {
     }
 
+    public ReturnBillDetail(int productId, String productName, int quantity, ReturnBill returnBill) {
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.returnBill = returnBill;
+    }
+
     public Integer getId() {
         return id;
     }
