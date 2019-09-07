@@ -6,11 +6,15 @@
 package com.sample.finalproject.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -30,14 +34,24 @@ public class Products implements Serializable{
     
     @Column(name = "price")
     private float price;
+    
+    @Column(name = "unit")
+    private String unit;
+    
+    @Column(name = "discount")
+    private float discount;
+    
+    @OneToMany(mappedBy = "product")
+    private List<OrderDetail> orderDetails;
 
     public Products() {
     }
 
-    public Products(Integer id, String name, float price) {
-        this.id = id;
+    public Products(String name, float price, String unit, float discount) {
         this.name = name;
         this.price = price;
+        this.unit = unit;
+        this.discount = discount;
     }
 
     public Integer getId() {
@@ -63,6 +77,28 @@ public class Products implements Serializable{
     public void setPrice(float price) {
         this.price = price;
     }
-    
-    
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(float discount) {
+        this.discount = discount;
+    }
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 }
