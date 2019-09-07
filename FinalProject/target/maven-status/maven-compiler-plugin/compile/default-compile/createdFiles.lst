@@ -1,3 +1,12 @@
 com\sample\finalproject\entity\Products.class
+com\sample\finalproject\controller\MainController.class
+com\sample\finalproject\controller\InventoryController.class
+com\sample\finalproject\entity\Transactions.class
+com\sample\finalproject\repository\EmployeesRepository.class
+com\sample\finalproject\repository\TransactionsRepository.class
+com\sample\finalproject\repository\InventoryRepository.class
+com\sample\finalproject\entity\Employees.class
 com\sample\finalproject\repository\OrdersRepository.class
+com\sample\finalproject\entity\Inventory.class
 com\sample\finalproject\entity\Orders.class
+com\sample\finalproject\controller\EmployeesController.class
