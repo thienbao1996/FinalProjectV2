@@ -35,10 +35,17 @@
                 <div class="col-lg-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li>
+<<<<<<< HEAD:FinalProject/src/main/webapp/views/home.jsp
                             <a onclick="showListOrder()">List Order</a>
                         </li>
                         <li>
                             <a onclick="showListReturnBill()">List Return Bill</a>
+=======
+                            <a onclick="loadListInventory();">Danh sách các đợt kiểm kê kho</a>
+                        </li>
+                        <li>
+                            <a onclick="loadListEmployees();">Quản lý danh sách nhân viên bán hàng</a>
+>>>>>>> origin/master:FinalProject/src/main/webapp/views/home2.jsp
                         </li>
                     </ul>
                 </div>
@@ -81,4 +88,24 @@
             }
         </script>
     </body>
+        <script>
+            function loadListEmployees(){
+                $.ajax({
+                   type: 'GET',
+                   url: "${pageContext.request.contextPath}/listEmployee",
+                   success: function (a){
+                       $("#con").html(a);
+                   }
+                });
+            }
+            function loadListInventory(){
+                $.ajax({
+                   type: 'GET',
+                   url: "${pageContext.request.contextPath}/listInventory",
+                   success: function (a){
+                       $("#con").html(a);
+                   }
+                });
+            }
+        </script>
 </html>
