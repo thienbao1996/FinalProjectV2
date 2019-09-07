@@ -1,30 +1,23 @@
-<<<<<<< HEAD
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\ProductsRepository.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\ReturnBill.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Products.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\OrderDetail.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\EmployeesRepository.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\controller\ReturnBillController.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\ReturnBillRepository.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Inventory.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\ReturnBillDetail.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\AccountsRepository.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\controller\MainController.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\OrdersRepository.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\controller\InventoryController.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Orders.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Transactions.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\controller\LoginController.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Accounts.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\entity\Employees.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\InventoryRepository.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\TransactionsRepository.java
+C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\controller\EmployeesController.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\OrderDetailRepository.java
 C:\Users\baolu\Desktop\NetBeansProjects\FinalProjectV2\FinalProject\src\main\java\com\sample\finalproject\repository\ReturnBillDetailRepository.java
-=======
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\entity\Products.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\entity\Inventory.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\repository\OrdersRepository.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\entity\Transactions.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\entity\Orders.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\controller\MainController.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\controller\InventoryController.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\repository\EmployeesRepository.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\repository\TransactionsRepository.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\repository\InventoryRepository.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\controller\EmployeesController.java
-C:\Users\My PC\Desktop\final project\FinalProject\src\main\java\com\sample\finalproject\entity\Employees.java
->>>>>>> origin/master

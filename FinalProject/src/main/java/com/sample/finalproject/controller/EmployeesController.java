@@ -41,13 +41,13 @@ public class EmployeesController {
         return m;
     }
     
-    @RequestMapping(name = "/addEmployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
     public ModelAndView addEmployee(@ModelAttribute("employee") Employees employee){
             ModelAndView m = new ModelAndView("home2");
         employeesRepository.save(employee);
         return m;
     }
-    @RequestMapping(name = "/deleteEmployee")
+    @RequestMapping(value = "/deleteEmployee")
     public String deleteEmployee(@RequestParam("id")Integer id){
         if(null != transactionsRepository.findTransactionSearch(id)){
             return "redirect:/listEmployee";

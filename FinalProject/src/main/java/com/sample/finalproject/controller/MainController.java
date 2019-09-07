@@ -40,17 +40,12 @@ public class MainController {
     
     @RequestMapping("/")
     public String test() {
-<<<<<<< HEAD
         return "login";
     }
     
     @RequestMapping("home")
-    public String test2() {
-        
-        return "home";
-=======
-        return "home2";
->>>>>>> origin/master
+    public String test2() {       
+        return "home";       
     }
     
     @RequestMapping("listOrder")
