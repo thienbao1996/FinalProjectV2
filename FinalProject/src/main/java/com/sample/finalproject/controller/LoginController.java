@@ -33,7 +33,7 @@ public class LoginController {
         if (a.getRole() == 1) {
             return new ModelAndView("home");
         } else {
-            return new ModelAndView("home");
+            return new ModelAndView("home2");
         }
     }
 }

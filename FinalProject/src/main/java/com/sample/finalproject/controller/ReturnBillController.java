@@ -44,7 +44,7 @@ public class ReturnBillController {
         return m;
     }
     
-    @RequestMapping(name = "/addReturnBill", method = RequestMethod.POST)
+    @RequestMapping(value = "/addReturnBill", method = RequestMethod.POST)
     public ModelAndView addReturnBill(@ModelAttribute("ReturnBill") ReturnBill bill) {
         ModelAndView m = new ModelAndView("addItemRB");
         returnBillRepository.save(bill);
@@ -54,7 +54,7 @@ public class ReturnBillController {
         return m;
     }
     
-    @RequestMapping(name = "/Detail")
+    @RequestMapping(value = "/Detail")
     public ModelAndView Detail(@RequestParam("id") int id, @RequestParam("proId") int proId, @RequestParam("proName") String proName, @RequestParam("quantity") int quantity) {
         ModelAndView m = new ModelAndView("addItemRB");
         returnBillDetailRepository.save(new ReturnBillDetail(proId, proName, quantity, returnBillRepository.findOne(id)));

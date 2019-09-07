@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Sep 6, 2019, 7:37:29 PM
+    Document   : home2
+    Created on : Sep 7, 2019, 9:52:03 PM
     Author     : baolu
 --%>
 
@@ -12,8 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home Page</title>
-
+        <title>JSP Page</title>
+        
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -33,19 +33,27 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 sidebar">
+<<<<<<< HEAD
                     <ul class="nav nav-sidebar">
                         <li>
 <<<<<<< HEAD:FinalProject/src/main/webapp/views/home2.jsp
+=======
+                    <ul class="nav nav-sidebar">                       
+                        <li>
+>>>>>>> 2ba38e50ef5dab44251a2259c371b7aa15f8e09a
                             <a onclick="loadListInventory();">Danh sách các đợt kiểm kê kho</a>
                         </li>
                         <li>
                             <a onclick="loadListEmployees();">Quản lý danh sách nhân viên bán hàng</a>
+<<<<<<< HEAD
 =======
                             <a onclick="showListOrder()">List Order</a>
                         </li>
                         <li>
                             <a onclick="showListReturnBill()">List Return Bill</a>
 >>>>>>> bcd5506eea222d38e074e406cae16cab05c0559e:FinalProject/src/main/webapp/views/home.jsp
+=======
+>>>>>>> 2ba38e50ef5dab44251a2259c371b7aa15f8e09a
                         </li>
                     </ul>
                 </div>
@@ -55,39 +63,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <script>
-            function test() {
-                $.ajax({
-                    type: "GET",
-                    url: "${pageContext.request.contextPath}/test",
-                    success: function (a) {
-                        $("#con").html(a);
-                    }
-                });
-            }
-            
-            function showListOrder() {
-                $.ajax({
-                    type: "GET",
-                    url: "${pageContext.request.contextPath}/listOrder",
-                    success: function (a) {
-                        $("#con").html(a);
-                    }
-                });
-            }
-            
-            function showListReturnBill() {
-                $.ajax({
-                    type: "GET",
-                    url: "${pageContext.request.contextPath}/listReturnBill",
-                    success: function (a) {
-                        $("#con").html(a);
-                    }
-                });
-            }
-        </script>
-    </body>
+        </div>        
+
         <script>
             function loadListEmployees(){
                 $.ajax({
@@ -108,4 +85,5 @@
                 });
             }
         </script>
+    </body>
 </html>

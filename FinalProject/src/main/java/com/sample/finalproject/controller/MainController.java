@@ -41,15 +41,23 @@ public class MainController {
     @RequestMapping("/")
     public String test() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return "home2";
 =======
+=======
+>>>>>>> 2ba38e50ef5dab44251a2259c371b7aa15f8e09a
         return "login";
     }
     
     @RequestMapping("home")
+<<<<<<< HEAD
     public String test2() {
         return "home";
 >>>>>>> bcd5506eea222d38e074e406cae16cab05c0559e
+=======
+    public String test2() {       
+        return "home";       
+>>>>>>> 2ba38e50ef5dab44251a2259c371b7aa15f8e09a
     }
     
     @RequestMapping("listOrder")
