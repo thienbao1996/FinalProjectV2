@@ -13,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -35,28 +35,49 @@
                 <thead>
                     <tr>
                         <th scope="col">ID Order</th>
+                        <th scope="col">Account</th>
                         <th scope="col">Create Date</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach items="${listReturnBill}" var="c" varStatus="loop">
                         <tr>
-                            <th scope="row">${c.id}</th>
-                            <td>${c.createdate}</td>                           
+                            <td scope="row">${c.id}</td>
+                            <td scope="row">${c.accounts.username}</td>
+                            <td>${c.createdate}</td>      
+                            <td>
+                                <div class="con-but">
+                                    <input onclick="loadReturnBillDetail(${c.id})" value="Return Bill Detail" class="btn btn-success"/>
+                                </div>
+                            </td>      
                         </tr>
                     </c:forEach>
                 </tbody>
-            </table>
-            <div class="con-but" style="margin-top: 30px;">
-                <input onclick="loadAddReturnBillForm()" value="Add Return Bill" class="btn btn-success"/>
-            </div>
+            </table>           
         </c:if>
-        
+        <div class="con-but" style="margin-top: 30px;">
+            <input onclick="loadAddReturnBillForm()" value="Add Return Bill" class="btn btn-success"/>
+        </div>
         <script>
             function loadAddReturnBillForm() {
                 $.ajax({
                     type: "GET",
                     url: "${pageContext.request.contextPath}/addReturnBillForm",
+                    success: function (a) {
+                        $("#con").html(a);
+                    }
+                });
+            }
+            
+            function loadReturnBillDetail(returnBillId) {
+                
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        returnBillId: returnBillId
+                    },
+                    url: "${pageContext.request.contextPath}/returnBillDetail",
                     success: function (a) {
                         $("#con").html(a);
                     }

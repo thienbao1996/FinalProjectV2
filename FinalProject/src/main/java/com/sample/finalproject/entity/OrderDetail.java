@@ -31,6 +31,9 @@ public class OrderDetail {
     @Column(name = "quantity")
     private int quantity;
     
+    @Column(name = "company")
+    private String company;
+    
     @ManyToOne
     @JoinColumn(name = "orders_id")
     private Orders orders;
@@ -78,5 +81,13 @@ public class OrderDetail {
 
     public void setProduct(Products product) {
         this.product = product;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

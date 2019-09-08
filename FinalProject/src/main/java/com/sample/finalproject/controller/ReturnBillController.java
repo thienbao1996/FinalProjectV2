@@ -7,9 +7,12 @@ package com.sample.finalproject.controller;
 
 import com.sample.finalproject.entity.ReturnBill;
 import com.sample.finalproject.entity.ReturnBillDetail;
+import com.sample.finalproject.repository.AccountsRepository;
 import com.sample.finalproject.repository.ReturnBillDetailRepository;
 import com.sample.finalproject.repository.ReturnBillRepository;
+import java.util.Date;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,6 +31,8 @@ public class ReturnBillController {
     private ReturnBillRepository returnBillRepository;
     @Autowired
     private ReturnBillDetailRepository returnBillDetailRepository;
+    @Autowired
+    private AccountsRepository accountsRepository;
     
     @RequestMapping("/listReturnBill")
     public ModelAndView loadListReturnBill() {
@@ -45,8 +50,12 @@ public class ReturnBillController {
     }
     
     @RequestMapping(value = "/addReturnBill", method = RequestMethod.POST)
-    public ModelAndView addReturnBill(@ModelAttribute("ReturnBill") ReturnBill bill) {
+    public ModelAndView addReturnBill(@RequestParam("date") Date date, HttpSession session) {
         ModelAndView m = new ModelAndView("addItemRB");
+        int user = (int) session.getAttribute("USER");
+        ReturnBill bill = new ReturnBill();
+        bill.setCreatedate(date);
+        bill.setAccounts(accountsRepository.findOne(user));
         returnBillRepository.save(bill);
         List<ReturnBill> list = returnBillRepository.findAll();
 
@@ -65,4 +74,11 @@ public class ReturnBillController {
         return m;
     }
     
+    @RequestMapping(value = "returnBillDetail", method = RequestMethod.POST)
+    public ModelAndView loadReturnBillDetail(@RequestParam("returnBillId") int returnBillId) {
+        ModelAndView m = new ModelAndView("returnBillDetail");
+        List<ReturnBillDetail> list = returnBillDetailRepository.findById(returnBillId);
+        m.addObject("returnBillDetail", list);
+        return m;
+    }
 }

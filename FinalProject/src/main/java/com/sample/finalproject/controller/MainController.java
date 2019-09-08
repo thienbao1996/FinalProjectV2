@@ -10,12 +10,15 @@ import com.sample.finalproject.entity.Orders;
 import com.sample.finalproject.entity.Products;
 import com.sample.finalproject.entity.ReturnBill;
 import com.sample.finalproject.entity.ReturnBillDetail;
+import com.sample.finalproject.repository.AccountsRepository;
 import com.sample.finalproject.repository.OrderDetailRepository;
 import com.sample.finalproject.repository.OrdersRepository;
 import com.sample.finalproject.repository.ProductsRepository;
 import com.sample.finalproject.repository.ReturnBillDetailRepository;
 import com.sample.finalproject.repository.ReturnBillRepository;
+import java.util.Date;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -36,6 +39,8 @@ public class MainController {
     private OrderDetailRepository orderDetailRepository;
     @Autowired
     private ProductsRepository productsRepository;
+    @Autowired
+    private AccountsRepository accountsRepository;
     
     
     @RequestMapping("/")
@@ -59,13 +64,16 @@ public class MainController {
     @RequestMapping("addOrderForm")
     public ModelAndView addOrderForm() {
         ModelAndView m = new ModelAndView("addOrder");
-        m.addObject("order", new Orders());
         return m;
     }
     
     @RequestMapping(value = "addOrder", method = RequestMethod.POST)
-    public ModelAndView addOrder(@ModelAttribute("order") Orders order) {
+    public ModelAndView addOrder(@RequestParam("date") Date date, HttpSession session) {
         ModelAndView m = new ModelAndView("addItem");
+        int user = (int) session.getAttribute("USER");
+        Orders order = new Orders();
+        order.setCreatedate(date);
+        order.setAccounts(accountsRepository.findOne(user));
         ordersRepository.save(order);
         List<Orders> list = ordersRepository.findAll();
         int id = list.get(list.size() - 1).getId();
@@ -98,5 +106,11 @@ public class MainController {
         return m;
     }
     
-    
+    @RequestMapping(value = "orderDetail", method = RequestMethod.POST)
+    public ModelAndView orderDetail(@RequestParam("orderId") int orderId) {
+        ModelAndView m = new ModelAndView("orderDetail");
+        List<OrderDetail> list = orderDetailRepository.findByOrderId(orderId);
+        m.addObject("orderDetail", list);
+        return m;
+    }
 }
