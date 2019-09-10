@@ -13,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -24,18 +24,33 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="alert alert-info" role="alert">
-            Add Order
-        </div>
-
-        <form:form action="${pageContext.request.contextPath}/addOrder" modelAttribute="order" method="POST">
+        <div class="container-fluid" id="con3">
+            <div class="alert alert-info" role="alert">
+                Add Order
+            </div>
             <label for="comment">Create Date:</label><br/>
-            <form:input path="createdate" type="text" id="createdate" placeholder="Create Date" class="form-control col-lg-12"/><br/>
+            <input type="text" id="txtCreatedate" placeholder="Create Date" class="form-control col-lg-12"/><br/>
             <br/>
             <div class="con-but" style="margin-top: 30px;">
-                <input type="submit" value="Submit Button" class="btn btn-success"/>
+                <input type="submit" value="Submit Button" class="btn btn-success" onclick="addOrder()"/>
                 <input type="reset" value="Reset Button" class="btn btn-success"/>
             </div>
-        </form:form>
+        </div>
+
+        <script>
+            function addOrder() {
+                var date = document.getElementById("txtCreatedate").value;
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        date: date
+                    },
+                    url: "${pageContext.request.contextPath}/addOrder",
+                    success: function (a) {
+                        $("#con3").html(a);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>

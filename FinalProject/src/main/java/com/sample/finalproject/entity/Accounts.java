@@ -6,11 +6,13 @@
 package com.sample.finalproject.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -33,6 +35,12 @@ public class Accounts implements Serializable{
     
     @Column(name = "role")
     private int role;
+    
+    @OneToMany(mappedBy = "accounts")
+    private List<Orders> orders;
+    
+    @OneToMany(mappedBy = "accounts")
+    private List<ReturnBill> returnBills;
 
     public Accounts() {
     }
@@ -69,6 +77,22 @@ public class Accounts implements Serializable{
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
+    }
+
+    public List<ReturnBill> getReturnBills() {
+        return returnBills;
+    }
+
+    public void setReturnBills(List<ReturnBill> returnBills) {
+        this.returnBills = returnBills;
     }
     
     

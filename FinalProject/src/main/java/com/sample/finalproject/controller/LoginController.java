@@ -7,6 +7,7 @@ package com.sample.finalproject.controller;
 
 import com.sample.finalproject.entity.Accounts;
 import com.sample.finalproject.repository.AccountsRepository;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +25,14 @@ public class LoginController {
     private AccountsRepository accountsRepository;
     
     @RequestMapping(value = "loginAction", method = RequestMethod.POST)
-    public ModelAndView loginAction(@RequestParam("user") String user, @RequestParam("pass") String pass) {
+    public ModelAndView loginAction(@RequestParam("user") String user, @RequestParam("pass") String pass, HttpSession session) {
         ModelAndView m;
         Accounts a = accountsRepository.checkLogin(user, pass);
         if( a == null ) {
             return new ModelAndView("fail");
         }
-        if (a.getRole() == 1) {
+        session.setAttribute("USER", a.getId());
+        if (a.getRole() == 1) {            
             return new ModelAndView("home");
         } else {
             return new ModelAndView("home2");

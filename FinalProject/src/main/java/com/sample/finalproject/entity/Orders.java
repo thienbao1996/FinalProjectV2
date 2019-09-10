@@ -15,6 +15,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,8 +46,12 @@ public class Orders implements Serializable{
     @Column(name = "total")
     private float total;    
     
-    @OneToMany(mappedBy = "orders")
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
+    
+    @ManyToOne
+    @JoinColumn(name = "accounts_id")
+    private Accounts accounts;
 
     public Orders() {
     }
@@ -96,5 +102,13 @@ public class Orders implements Serializable{
 
     public void setTotal(float total) {
         this.total = total;
+    }
+
+    public Accounts getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Accounts accounts) {
+        this.accounts = accounts;
     }
 }

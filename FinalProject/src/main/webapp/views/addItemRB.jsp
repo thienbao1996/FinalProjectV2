@@ -39,7 +39,7 @@
             <input type="text" id="txtQuantiry" placeholder="Quantity" class="form-control col-lg-12"/><br/>
             <div class="con-but" style="margin-top: 30px;">
                 <input type="submit" value="Submit Button" class="btn btn-success" onclick="addItems()"/>
-                <a href="/FinalProject/">Finish</a>           
+                <a href="/FinalProject/home">Finish</a>           
             </div>
         </div>
 
