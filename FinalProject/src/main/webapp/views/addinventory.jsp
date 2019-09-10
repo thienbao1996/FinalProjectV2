@@ -26,24 +26,23 @@
         <div class="alert alert-info" role="alert">
             Thêm nhân đợt kiểm kê
         </div>
-
-        <form:form action="${pageContext.request.contextPath}/addInventory" modelAttribute="inventory" >
+        <form:form action="${pageContext.request.contextPath}/addInventorys" modelAttribute="inventory" method="POST">
             <label for="comment">Mã kiểm kê:</label><br/>
-            <form:input path="id" type="text" id="id" placeholder="Mã kiểm kê" class="form-control col-lg-12"/><br/>
+            <form:input path="id" type="text" id="id" placeholder="Mã kiểm kê:" class="form-control col-lg-12"/><br/>
             <label for="comment">Ngày kiểm kê:</label><br/>
-            <form:input path="createDate" type="date" id="createDate" placeholder="Ngày kiểm kê" class="form-control col-lg-12"/><br/>
+            <form:input path="createDate" type="date" id="createdate"  class="form-control col-lg-12"/><br/>
             <label for="comment">Ghi chú:</label><br/>
             <form:input path="note" type="text" id="note" placeholder="Ghi chú" class="form-control col-lg-12"/><br/>
             <label for="comment">Mã hàng:</label><br/>
-            <form:input path="product_id" type="text" id="product_id" placeholder="Mã hàng" class="form-control col-lg-12"/><br/>
+            <form:input path="item_id" type="text" id="item_id" placeholder="Mã hàng" class="form-control col-lg-12"/><br/>
             <label for="comment">Đơn vị tính:</label><br/>
             <form:input path="unit" type="text" id="unit" placeholder="Đơn vị tính" class="form-control col-lg-12"/><br/>
             <label for="comment">Số lượng:</label><br/>
             <form:input path="amount" type="text" id="amount" placeholder="số lượng" class="form-control col-lg-12"/><br/>
             <br/><br/>
             <div class="con-but" style="margin-top: 30px;">
-                <input type="submit" value="Submit Button" class="btn btn-success"/>
-                <input type="reset" value="Reset Button" class="btn btn-success"/>
+                <input type="submit" value="Lưu" class="btn btn-success"/>
+                <input type="reset" value="Làm mới" class="btn btn-success"/>
             </div>
         </form:form>
     </body>

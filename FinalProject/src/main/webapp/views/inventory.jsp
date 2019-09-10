@@ -55,10 +55,11 @@
                     </c:forEach>
                 </tbody>
             </table>
-            <div class="con-but" style="margin-top: 30px;">
-                <input onclick="loadAddInventory();" value="Thêm đợt kiểm kê" class="btn btn-success"/>
-            </div>
+            
         </c:if>
+        <div class="con-but" style="margin-top: 30px;">
+                <input onclick="loadAddInventory();" value="Thêm đợt kiểm kê" class="btn btn-success"/>
+         </div>
     </body>
     <script>
         function loadAddInventory() {

@@ -46,7 +46,8 @@
             <form:input path="note" type="text" id="note" placeholder="Ghi chú" class="form-control col-lg-12"/><br/>
             <br/><br/>
             <div class="con-but" style="margin-top: 30px;">
-                <input type="submit" value="Submit Button" class="btn btn-success"/>
+                <input type="submit" value="Lưu" class="btn btn-success"/>
+                <input type="reset" value="Làm mới" class="btn btn-success"/>
             </div>
         </form:form>
     </body>

@@ -23,11 +23,11 @@ public class Inventory implements Serializable{
     @Column(name = "id")
     private Integer id;
     @Column(name = "createdate")
-    private Date createDate;
+    private String createDate;
     @Column(name = "note")
     private String note;
-    @Column(name = "product_id")
-    private Integer product_id;
+    @Column(name = "item_id")
+    private Integer item_id;
     @Column(name = "unit")
     private String unit;
     @Column(name = "amount")
@@ -36,21 +36,21 @@ public class Inventory implements Serializable{
     public Inventory() {
     }
 
-    public Inventory(Integer id, Date createDate, String note, Integer product_id, String unit, double amount) {
+    public Inventory(Integer id, String createDate, String note, Integer item_id, String unit, double amount) {
         this.id = id;
         this.createDate = createDate;
         this.note = note;
-        this.product_id = product_id;
+        this.item_id = item_id;
         this.unit = unit;
         this.amount = amount;
     }
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getItem_id() {
+        return item_id;
     }
 
-    public void setProduct_id(Integer product_id) {
-        this.product_id = product_id;
+    public void setItem_id(Integer item_id) {
+        this.item_id = item_id;
     }
 
     public String getUnit() {
@@ -79,11 +79,11 @@ public class Inventory implements Serializable{
         this.id = id;
     }
 
-    public Date getCreateDate() {
+    public String getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
 

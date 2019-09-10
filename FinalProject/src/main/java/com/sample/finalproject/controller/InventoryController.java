@@ -38,9 +38,9 @@ public class InventoryController{
         return m;
     }
     
-    @RequestMapping("/addInventory")
-    public ModelAndView addInventory(@ModelAttribute("inventory") Inventory inventory){
-            ModelAndView m = new ModelAndView("home");
+    @RequestMapping(value = "addInventorys", method = RequestMethod.POST)
+    public ModelAndView addInventorys(@ModelAttribute("inventory") Inventory inventory){
+        ModelAndView m = new ModelAndView("home2");
         inventoryRepository.save(inventory);
         return m;
     }
@@ -53,10 +53,10 @@ public class InventoryController{
         return m;
     }
     
-    @RequestMapping("/editInventory")
-    public ModelAndView editMatch(@ModelAttribute("inventory") Inventory inventory) {
-        ModelAndView m = new ModelAndView("home");
-        inventoryRepository.updateInventory(inventory.getCreateDate(), inventory.getNote(), inventory.getProduct_id(), inventory.getUnit(), inventory.getAmount(), inventory.getId());
+    @RequestMapping(value = "/editInventory", method = RequestMethod.POST)
+    public ModelAndView editInventory(@ModelAttribute("inventory") Inventory inventory) {
+        ModelAndView m = new ModelAndView("home2");
+        inventoryRepository.updateInventory(inventory.getNote(), inventory.getId());
         return m;
     }
 }

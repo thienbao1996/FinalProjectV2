@@ -74,10 +74,11 @@
                     </c:forEach>
                 </tbody>
             </table>
-            <div class="con-but" style="margin-top: 30px;">
+            
+        </c:if>
+        <div class="con-but" style="margin-top: 30px;">
                 <input onclick="loadAddEmployee();" value="Thêm NVBH" class="btn btn-success"/>
             </div>
-        </c:if>
     </body>
     <script>
         
